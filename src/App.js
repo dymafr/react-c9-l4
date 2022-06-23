@@ -22,6 +22,14 @@ function App() {
     );
   }
 
+  function toggleTodoEdit(id) {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id ? { ...todo, edit: !todo.edit } : todo
+      )
+    );
+  }
+
   return (
     <div className="d-flex justify-content-center align-items-center p-20">
       <div className="card container p-20">
@@ -31,6 +39,7 @@ function App() {
           todoList={todoList}
           deleteTodo={deleteTodo}
           toggleTodo={toggleTodo}
+          toggleTodoEdit={toggleTodoEdit}
         />
       </div>
     </div>
